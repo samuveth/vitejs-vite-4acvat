@@ -5,11 +5,13 @@ import { InjectedConnector } from 'use-wagmi/connectors/injected';
 
 const { address, isConnected, isConnecting } = useAccount({
   onConnect({ connector }) {
+    console.log(connector);
     connector?.getProvider();
   },
 });
 const { connect, connectors } = useConnect({
   onSuccess({ connector }) {
+    console.log(connector);
     connector?.getProvider();
   },
 });
